@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alrobert <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: alex <alex@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 14:23:23 by alrobert          #+#    #+#              #
-#    Updated: 2022/09/28 16:11:04 by alrobert         ###   ########.fr        #
+#    Updated: 2022/10/09 15:56:43 by alex             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,5 +29,16 @@ re: fclean all
 
 run:
 	clear
+	@gcc main.c $(SOURCE) -o $(NAME) -l bsd
+	@./$(NAME)
+
+check: 
+	clear
 	@gcc main.c $(SOURCE) -o $(NAME) -l bsd -Wall -Wextra -Werror
 	@./$(NAME)
+
+debug:
+	clear
+	@gcc main.c $(SOURCE) -o $(NAME) -g -l bsd -Wall -Wextra -Werror
+	@gdb ./$(NAME)
+

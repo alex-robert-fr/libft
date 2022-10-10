@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/26 14:39:38 by alrobert          #+#    #+#             */
-/*   Updated: 2022/09/27 14:14:25 by alrobert         ###   ########.fr       */
+/*   Created: 2022/10/07 12:37:39 by alex              #+#    #+#             */
+/*   Updated: 2022/10/09 17:13:21 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *s, int c, unsigned int n)
+#include<stdio.h>
+#include<stddef.h>
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned int	i;
-	char			*str;
-
-	str = s;
+	size_t	i;
+	if(!s)
+	return (0);
 	i = 0;
 	while (i < n)
 	{
-		str[i] = c;
+		if (((unsigned char *)s)[i] == (unsigned char)c)
+			return((void *)(s + i));
 		i++;
 	}
-	return (s);
+	return (0);
 }

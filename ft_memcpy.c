@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	start = src;
 	end = dest;
 	i = 0;
-	while ((start + i) && i < n)
+	while (i < n)
 	{
 		end[i] = start[i];
 		i++;

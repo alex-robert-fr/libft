@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/26 10:54:50 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/09 17:55:13 by alex             ###   ########.fr       */
+/*   Created: 2022/10/09 17:20:25 by alex              #+#    #+#             */
+/*   Updated: 2022/10/09 18:20:06 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
 #include<stddef.h>
 #include<stdlib.h>
-#include<string.h>
 #include<stdio.h>
-#include "libft.h"
-
-void	ft_print_result(const char *s)
+char    *ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int		len;
+    char *text;
+    size_t word;
 
-	len = 0;
-	while (s[len])
-		len++;
-	write(1, s, len);
-}
-
-int main()
-{
-	char	*strsub;
-	char	str[] = "lorem ipsum dolor sit amet";
-
-	strsub = ft_substr(str, 0, 10);
-	ft_print_result(strsub);
-	return 0;
+    text = malloc((len) * sizeof(char));
+    word = 0;
+    while(s[start] && word < len) {
+        // printf("word: %i / len: %li\n", word, len);
+        text[word] = s[start];
+        word++;
+        start++;
+    }
+    return (text);
 }

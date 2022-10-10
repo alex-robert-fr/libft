@@ -1,4 +1,0 @@
-clear
-[H[2J[3J
-Return value is false
---------------------------
