@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 17:33:23 by alex              #+#    #+#             */
-/*   Updated: 2022/10/05 17:33:25 by alex             ###   ########.fr       */
+/*   Updated: 2022/10/10 10:52:32 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,8 @@ int	ft_atoi(const char *nptr)
 	}
 	else if (nptr[i] < 48 || nptr[i] > 57)
 		return (result);
-	while(nptr[i] && (nptr[i] >= 48 && nptr[i] <= 57))
-	{
-		result *= 10;
-		result += (int)nptr[i] - 48;
-		i++;
-	}
+	while (nptr[i] && (nptr[i] >= 48 && nptr[i] <= 57))
+		result = (result * 10) + ((int)nptr[i++] - 48);
 	if (is_negative)
 		result *= -1;
 	return (result);
