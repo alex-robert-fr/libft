@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 10:54:50 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/10 17:35:17 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/10/11 12:55:47 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ void	ft_print_result(char const *s)
 
 int main()
 {
-	char	str[] = " lorem ipsum dolor sit amet ";
+	char	str[] = " lllorem ipsum dolor sit ametll";
 	char	*strtrim;
 
-	strtrim = ft_strtrim(str, " ");
+	strtrim = ft_strtrim(str, "l ");
 	printf("%s", strtrim);
 	return 0;
 }
