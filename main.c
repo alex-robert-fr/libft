@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 10:54:50 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/11 12:55:47 by alex             ###   ########.fr       */
+/*   Updated: 2022/10/11 17:27:33 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,24 @@
 #include<unistd.h>
 #include "libft.h"
 
-void	ft_print_result(char const *s)
-{
-	int		len;
-
-	len = 0;
-	while (s[len])
-		len++;
-	write(1, s, len);
-}
-
 int main()
 {
-	char	str[] = " lllorem ipsum dolor sit ametll";
-	char	*strtrim;
+	char	**split;
+	char	s[] = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendi";
+	int		i;
+	int		j;
 
-	strtrim = ft_strtrim(str, "l ");
-	printf("%s", strtrim);
+	split = ft_split(s, ' ');
+	i = 0;
+	while (split[i])
+	{
+		j = 0;
+		while (split[i][j])
+		{
+			printf("%c", split[i][j]);
+			j++;
+		}
+		i++;
+	}
 	return 0;
 }

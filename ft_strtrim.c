@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 13:32:30 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/11 12:58:01 by alex             ###   ########.fr       */
+/*   Updated: 2022/10/11 13:55:56 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #include <stdlib.h>
 #include "libft.h"
 
-int		trim(char const *s1, char const *set)
+int	trim(char const *s1, char const *set)
 {
 	int		i_start;
 	int		find;
 	int		j;
-	
+
 	i_start = 0;
 	find = 1;
 	while (s1[i_start])
@@ -30,27 +30,24 @@ int		trim(char const *s1, char const *set)
 			j = 0;
 			while (set[j])
 			{
-				// printf("[%i] %c\n",j , s1[i_start]);
 				if (s1[i_start] == set[j])
 					find++;
 				j++;
 			}
-			// printf("%i >> %c\n",i_start , s1[i_start]);
 		}
-		else {
-			i_start--;
-			break;
-		}
+		else
+			break ;
 		i_start++;
 	}
 	return (i_start);
 }
-int		rtrim(char const *s1, char const *set)
+
+int	rtrim(char const *s1, char const *set)
 {
 	int		i_start;
 	int		find;
 	int		j;
-	
+
 	i_start = ft_strlen(s1) - 1;
 	find = 1;
 	while (s1[i_start])
@@ -61,17 +58,13 @@ int		rtrim(char const *s1, char const *set)
 			j = 0;
 			while (set[j])
 			{
-				// printf("[%i] %c\n",j , s1[i_start]);
 				if (s1[i_start] == set[j])
 					find++;
 				j++;
 			}
-			// printf("%i >> %c\n",i_start , s1[i_start]);
 		}
-		else {
-			i_start += 2;
-			break;
-		}
+		else
+			break ;
 		i_start--;
 	}
 	return (i_start);
@@ -85,21 +78,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		i_end;
 
 	i = 0;
-	i_start = trim(s1, set);
-	i_end = rtrim(s1, set);
+	i_start = trim(s1, set) - 1;
+	i_end = rtrim(s1, set) + 2;
 	str = (char *)malloc(sizeof(char) * 1000);
-
-	
-	// printf("i_start: %i\n", i_start);
-	// printf("i_end: %i\n", i_end);
-	// printf("j: %i\n", j);
 	while (i < (i_end - i_start))
 	{
 		str[i] = s1[i_start + i];
 		i++;
 	}
 	str[i] = '\0';
-	
 	return (str);
 }
-
