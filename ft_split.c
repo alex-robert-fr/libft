@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alrobert <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:09:31 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/11 17:24:45 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/10/11 19:49:40 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,19 @@ char	**ft_split(char const *s, char c)
 	}
 	str_array = (char **)malloc(rows * sizeof(char *));
 	i = 0;
-	printf("len: %i\n", ft_strlen(s) - 1);
+//	printf("len: %i\n", ft_strlen(s) - 1);
 	while (s[i])
 	{
+
 		if ((s[i] != c) && i != (ft_strlen(s) - 1))
 		{
-			printf("i: %i\n", i);
+			// printf("i: %i\n", i);
 			columns++;
 		}
 		else
 		{
-			str_array[j] = (char *)malloc(columns * sizeof(char));
-			printf("Malloc[%i]\n", j);
+			str_array[j] = (char *)malloc((columns  + 1) * sizeof(char));
+//			printf("Malloc[%i]\n", j);
 			columns = 0;
 			j++;
 		}
@@ -64,11 +65,13 @@ char	**ft_split(char const *s, char c)
 		}
 		else
 		{
+			str_array[rows][columns] = '\0';
 			columns = 0;
 			rows++;
 		}
 		i++;
 	}
+	str_array[rows] = NULL;
 	/*
 	printf("Rows: %i\n", rows);
 	printf("Columns: %i\n", columns);
