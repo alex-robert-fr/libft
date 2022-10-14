@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/27 14:49:21 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/14 17:42:05 by alrobert         ###   ########.fr       */
+/*   Created: 2022/10/14 13:30:53 by alrobert          #+#    #+#             */
+/*   Updated: 2022/10/14 14:07:41 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdlib.h>
+#include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	const char		*start;
-	char			*end;
-	unsigned int	i;
+	char	*str;
+	int		i;
 
-	start = src;
-	end = dest;
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!str)
+		return (NULL);
 	i = 0;
-	while (i < n)
+	while (s[i])
 	{
-		end[i] = start[i];
+		str[i] = f(i, s[i]);
 		i++;
 	}
-	return (dest);
+	str[i] = '\0';
+	return (str);
 }

@@ -6,7 +6,7 @@
 #    By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 14:23:23 by alrobert          #+#    #+#              #
-#    Updated: 2022/10/12 16:37:15 by alrobert         ###   ########.fr        #
+#    Updated: 2022/10/14 17:45:12 by alrobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,11 +32,11 @@ run:
 
 check:
 	@gcc main.c $(SOURCE) -o $(NAME) -l bsd $(FLAGS)
-	@valgrind ./$(NAME)
+#	@valgrind ./$(NAME)
 
 debug:
 	@gcc main.c $(SOURCE) -o $(NAME) -g
 	@gdb ./$(NAME)
 so:
-	@gcc -nostartfiles -fPIC $(FLAGS) $(SOURCE)
-	@gcc -nostartfiles -shared -o libft.so ft_*.o
+	gcc -fPIC $(FLAGS) $(SOURCE)
+	gcc -shared -o libft.so ft_*.o
