@@ -6,7 +6,7 @@
 #    By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 14:23:23 by alrobert          #+#    #+#              #
-#    Updated: 2022/10/14 17:45:12 by alrobert         ###   ########.fr        #
+#    Updated: 2022/10/16 16:16:21 by alrobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,5 +38,5 @@ debug:
 	@gcc main.c $(SOURCE) -o $(NAME) -g
 	@gdb ./$(NAME)
 so:
-	gcc -fPIC $(FLAGS) $(SOURCE)
-	gcc -shared -o libft.so ft_*.o
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SOURCE)
+	gcc -nostartfiles -shared -o libft.so ft_*.o

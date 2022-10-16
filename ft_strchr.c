@@ -6,7 +6,7 @@
 /*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 09:19:55 by alrobert          #+#    #+#             */
-/*   Updated: 2022/09/30 10:33:22 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/10/16 17:15:21 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ char	*ft_strchr(const char *s, int c)
 	}
 	if (is_found || (s[i] == '\0' && c == '\0'))
 		return ((char *)s + i);
-	return ("NULL");
+	return (NULL);
 }

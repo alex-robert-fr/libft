@@ -6,7 +6,7 @@
 /*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 10:54:50 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/14 17:20:04 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/10/16 18:01:34 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,16 @@
 #include <unistd.h>
 #include "libft.h"
 
-void	ft_print_result(int n)
-{
-	if (n > 0)
-		write(1, "1", 1);
-	else if (n < 0)
-		write(1, "-1", 2);
-	else
-		write(1, "0", 1);
-}
-
 int main()
 {
-	ft_print_result(ft_strncmp("abcdefghij", "abcdefgxyz", 3));
+	char *src = "there is so \0ma\0ny \0 \\0 in t\0his stri\0ng !\0\0\0\0";
+	char *d1 = strrchr(src, '\0');
+	char *d2 = ft_strrchr(src, '\0');
+	if (d1 == d2)
+		printf("YES");
+	else
+		printf("NO\n");
+	if (d2 == NULL)
+		printf("NULL\n");
 	return 0;
 }

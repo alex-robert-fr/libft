@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 12:37:39 by alex              #+#    #+#             */
-/*   Updated: 2022/10/10 10:46:40 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/10/16 17:14:31 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t	i;
 
-	if (!s)
-		return (0);
 	i = 0;
 	while (i < n)
 	{
