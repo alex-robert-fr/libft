@@ -6,7 +6,7 @@
 /*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 10:54:50 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/16 18:01:34 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/10/17 18:30:45 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,40 @@
 
 int main()
 {
-	char *src = "there is so \0ma\0ny \0 \\0 in t\0his stri\0ng !\0\0\0\0";
-	char *d1 = strrchr(src, '\0');
-	char *d2 = ft_strrchr(src, '\0');
-	if (d1 == d2)
-		printf("YES");
-	else
-		printf("NO\n");
-	if (d2 == NULL)
-		printf("NULL\n");
+    char src[] = "cou";
+	char dest[20]; memset(dest, 'A', 20);
+    int i = 0;
+    // printf("%s\n",dest);
+    // printf("fryefghrag: %li\n", strlcpy(dest, src, -1));
+    // while (i <= strlen(src) + 1)
+    // {
+    //     printf("%c", dest[i]);
+    //     i++;
+    // }
+    if (strlcpy(dest, src, -1) == strlen(src) && !strcmp(src, dest) && dest[strlen(src) + 1] == 'A')
+    {
+        printf("YES\n");
+        // printf("Strlcpy: %li\n", strlcpy(dest, src, -1));
+        printf("Strlen: %i\n", strlen(src));
+        printf("Strcmp: %i\n", strcmp(src, dest));
+        printf("dest: %c\n", dest[strlen(src)]);
+        while (i <= strlen(src) + 1)
+        {
+            printf("-> %c\n", dest[i]);
+            i++;
+        }
+        
+    }
+    else
+    {
+        printf("NO\n");
+        printf("Strlcpy: %li\n", ft_strlcpy(dest, src, -1));
+        printf("Strlen: %li\n", strlen(src));
+        printf("Strcmp: %li\n", strcmp(src, dest));
+        printf("dest: %li\n", dest[strlen(src) + 1]);
+    }
+    
+    
+    
 	return 0;
 }

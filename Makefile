@@ -6,7 +6,7 @@
 #    By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 14:23:23 by alrobert          #+#    #+#              #
-#    Updated: 2022/10/16 16:16:21 by alrobert         ###   ########.fr        #
+#    Updated: 2022/10/17 18:38:32 by alrobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ $(NAME):
 clean:
 	@rm -f *.o
 fclean: clean
-	@rm -f $(NAME)
+	@rm -f $(NAME) $(NAME).so a.out
 re: fclean all
 
 run:

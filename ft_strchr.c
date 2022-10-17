@@ -6,7 +6,7 @@
 /*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 09:19:55 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/16 17:15:21 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/10/17 16:29:43 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ char	*ft_strchr(const char *s, int c)
 	is_found = 0;
 	while (s[i] && !is_found)
 	{
-		if (s[i] == c)
+		if (s[i] == (unsigned char)c)
 		{
 			is_found = 1;
 			break ;
 		}
 		i++;
 	}
-	if (is_found || (s[i] == '\0' && c == '\0'))
+	if (is_found || (s[i] == '\0' && (unsigned char)c == '\0'))
 		return ((char *)s + i);
 	return (NULL);
 }

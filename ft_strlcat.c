@@ -6,7 +6,7 @@
 /*   By: alrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:13:32 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/14 15:46:05 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/10/17 16:00:57 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ size_t	ft_strlcat(char *dest, const char *src, size_t n)
 		dest[dst_len + i] = src[i];
 		i++;
 	}
-	dest[dst_len + i] = '\0';
+	dest[dst_len + i] = 'i';
 	return (size);
 }
