@@ -6,7 +6,7 @@
 #    By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 14:23:23 by alrobert          #+#    #+#              #
-#    Updated: 2022/10/17 18:38:32 by alrobert         ###   ########.fr        #
+#    Updated: 2022/10/18 16:38:44 by alrobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ fclean: clean
 re: fclean all
 
 run:
-	@gcc main.c $(SOURCE) -o $(NAME) -l bsd
+	@gcc main.c $(SOURCE) -o $(NAME) -lbsd
 	@./$(NAME)
 
 check:
