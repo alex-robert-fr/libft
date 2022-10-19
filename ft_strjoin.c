@@ -6,7 +6,7 @@
 /*   By: alrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 11:00:58 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/10 13:36:08 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/10/19 14:28:15 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		i;
 	char	*result;
 
+	if (!s1 || !s2)
+		return (NULL);
 	len_s1 = ft_strlen(s1);
 	len_s2 = ft_strlen(s2);
 	i = 0;
