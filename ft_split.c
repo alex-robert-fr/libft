@@ -6,7 +6,7 @@
 /*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:09:31 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/12 16:30:51 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/10/19 17:01:00 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,15 @@ static char	**size_split(char const *s, int strlen, char c)
 			rows++;
 		i++;
 	}
-	chr = (char **)malloc(rows * sizeof(char *));
-	i = 0;
-	while (i < rows)
+	chr = ft_calloc(rows, sizeof(char *));
+	if (!chr)
+		return (NULL);
+	i = -1;
+	while (++i < rows)
 	{
-		chr[i] = (char *)malloc(50 * sizeof(char));
-		i++;
+		chr[i] = ft_calloc(50, sizeof(char));
+		if (!chr[i])
+			return (NULL);
 	}
 	return (chr);
 }
@@ -46,11 +49,15 @@ char	**ft_split(char const *s, char c)
 	int		strlen;
 	int		i;
 
+	if (!s)
+		return (NULL);
 	rows = 0;
 	columns = 0;
 	i = 0;
 	strlen = ft_strlen(s);
 	str_array = size_split(s, strlen, c);
+	if (!str_array)
+		return (NULL);
 	while (s[i] == c)
 		i++;
 	while (s[i])
@@ -69,7 +76,6 @@ char	**ft_split(char const *s, char c)
 			}
 			else
 			{
-				str_array[rows][columns] = '\0';
 				columns = 0;
 				rows++;
 				i++;
@@ -80,7 +86,6 @@ char	**ft_split(char const *s, char c)
 			break ;
 		}
 	}
-	str_array[rows][columns] = '\0';
 	str_array[rows + 1] = 0;
 	return (str_array);
 }

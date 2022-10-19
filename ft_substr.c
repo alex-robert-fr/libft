@@ -6,7 +6,7 @@
 /*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 17:20:25 by alex              #+#    #+#             */
-/*   Updated: 2022/10/19 13:18:11 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/10/19 16:50:53 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	word = 0;
 	while (s[start] && word < len)
-	{
-		text[word] = s[start];
-		word++;
-		start++;
-	}
+		text[word++] = s[start++];
 	return (text);
 }
