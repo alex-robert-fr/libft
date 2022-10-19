@@ -6,12 +6,10 @@
 /*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 17:20:25 by alex              #+#    #+#             */
-/*   Updated: 2022/10/11 14:06:21 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/10/19 13:18:11 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
@@ -19,15 +17,21 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char		*text;
 	size_t		word;
 
-	text = (char *)malloc(1 * sizeof(char));
-	if ((int)start > ft_strlen(s))
+	if (!s)
+		return (NULL);
+	if (start > (size_t)ft_strlen(s))
 	{
-		text[0] = '\0';
+		text = ft_calloc(1, sizeof(char));
+		if (!text)
+			return (NULL);
 		return (text);
 	}
-	text = (char *)malloc((len + 1) * sizeof(char));
-	if (text == NULL)
-		return (0);
+	if (len + start > (size_t)ft_strlen(s))
+		text = ft_calloc((ft_strlen(s) - start + 1), sizeof(char));
+	else
+		text = ft_calloc((len + 1), sizeof(char));
+	if (!text)
+		return (NULL);
 	word = 0;
 	while (s[start] && word < len)
 	{
@@ -35,6 +39,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		word++;
 		start++;
 	}
-	text[word] = '\0';
 	return (text);
 }

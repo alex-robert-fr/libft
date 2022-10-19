@@ -6,14 +6,14 @@
 /*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 17:26:54 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/16 17:25:07 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/10/19 12:05:26 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stddef.h>
+#include <stdlib.h>
 # include <stdio.h>
 
 int		ft_isalpha(int c);
