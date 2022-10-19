@@ -6,13 +6,11 @@
 /*   By: alrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 13:50:57 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/13 18:08:55 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/10/19 16:47:31 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
+#include "libft.h"
 
 int	num_len(int n)
 {
@@ -59,19 +57,24 @@ char	*ft_itoa(int n)
 	int		size;
 	int		is_negative;
 
-	if (n == 0)
-		return ("0");
-	if (n == -2147483648)
-		return ("-2147483648");
+	if (n == 0 || n == -2147483648)
+	{
+		if (n == 0)
+			str = ft_strdup("0");
+		else
+			str = ft_strdup("-2147483648");
+		return (str);
+	}
 	size = num_len(n);
+	is_negative = 0;
 	if (n < 0)
 	{
 		is_negative = 1;
 		n *= -1;
 	}
-	else
-		is_negative = 0;
-	str = malloc(size + 1 * sizeof(char));
+	str = ft_calloc(size + 1, sizeof(char));
+	if (!str)
+		return (NULL);
 	str = nbr_to_str(n, size, is_negative, str);
 	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: alrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:13:32 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/18 15:09:01 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/10/19 16:39:26 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 size_t	ft_strlcat(char *dest, const char *src, size_t n)
 {
 	size_t	i;
-	size_t		dst_len;
+	size_t	dst_len;
 
 	if (n == 0)
 		return (ft_strlen(src));
