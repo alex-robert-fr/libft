@@ -3,89 +3,69 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 14:09:31 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/19 17:01:00 by alrobert         ###   ########.fr       */
+/*   Created: 2022/10/19 22:22:40 by alrobert          #+#    #+#             */
+/*   Updated: 2022/10/20 00:36:45 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "libft.h"
 
-static char	**size_split(char const *s, int strlen, char c)
+static char	**ft_size_split(char const *s, char c)
 {
-	char	**chr;
-	int		i;
+	char	**m_str;
 	int		rows;
-
+	int		i_rows;
+	int		i_columns;
+	int		i;
+	int		j;
+	
 	rows = 1;
-	i = 0;
-	while (i < (strlen - 1))
-	{
-		if ((s[i] == c) && (s[i + 1] != c))
-			rows++;
-		i++;
-	}
-	chr = ft_calloc(rows, sizeof(char *));
-	if (!chr)
-		return (NULL);
 	i = -1;
-	while (++i < rows)
+	while (s[++i] == c)
+		;
+	while (++i < (ft_strlen(s) - 1))
+		rows += ((s[i] == c) && (s[i + 1] != c));
+	m_str = ft_calloc(rows, sizeof(char *));
+	if (!m_str)
+		return (NULL);
+//	printf("Rows: %i\n", rows);
+	i = -1;
+	j = 0;
+	i_rows = 0;
+	while (++i <= (ft_strlen(s)))
 	{
-		chr[i] = ft_calloc(50, sizeof(char));
-		if (!chr[i])
-			return (NULL);
+		if (s[i] != c && s[i])
+			j++;
+		if (((s[i] == c && (s[i - 1] != c)) || (i == ft_strlen(s))) && j > 0)
+		{
+//			printf("Columns: %i | Word: %i\n",i , j);
+			m_str[i_rows] = ft_calloc(j + 1, sizeof(char));
+			if (!m_str[i_rows])
+				return (NULL);
+			i_columns = -1;
+			while (++i_columns < j)
+				m_str[i_rows][i_columns] = s[i - j + i_columns];
+//			printf("rows -> %i\n", i_rows);
+			i_rows++;
+			j = 0;
+		}
 	}
-	return (chr);
+
+//	printf("rows -> %i\n", i_rows);
+	m_str[i_rows] = 0;
+	return (m_str);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**str_array;
-	int		rows;
-	int		columns;
-	int		strlen;
-	int		i;
 
 	if (!s)
 		return (NULL);
-	rows = 0;
-	columns = 0;
-	i = 0;
-	strlen = ft_strlen(s);
-	str_array = size_split(s, strlen, c);
+	str_array = ft_size_split(s, c);
 	if (!str_array)
 		return (NULL);
-	while (s[i] == c)
-		i++;
-	while (s[i])
-	{
-		if (s[i] != c)
-		{
-			str_array[rows][columns] = s[i];
-			columns++;
-			i++;
-		}
-		else if (s[i] == c && i < (strlen - 1))
-		{
-			if (s[i + 1] == c)
-			{
-				i++;
-			}
-			else
-			{
-				columns = 0;
-				rows++;
-				i++;
-			}
-		}
-		else
-		{
-			break ;
-		}
-	}
-	str_array[rows + 1] = 0;
 	return (str_array);
 }
