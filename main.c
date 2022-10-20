@@ -6,7 +6,7 @@
 /*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 10:54:50 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/20 00:38:32 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/10/20 18:12:18 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,15 @@
 #include <malloc.h>
 #include <limits.h>
 #include "libft.h"
+
+// int	mcheck(void *p, size_t require_size)
+// {
+// 	void *p2 = malloc(require_size);
+// 	if (malloc_usable_size(p) == malloc_usable_size(p2))
+// 		return (1);
+// 	return (0);
+	
+// }
 
 void	ft_print_result(char const *s)
 {
@@ -31,34 +40,22 @@ void	ft_print_result(char const *s)
 
 int main()
 {
-	char	**tabstr;
-	int		i;
-	int		j;
+    char **tab;
+    char *splitme;
+    int i = -1;
 
-	i = 0;
-	if (!(tabstr = ft_split("  tripouille  42  ", ' ')))
-		ft_print_result("NULL");
-	else
-	{
-		while (i < 3)
-		{
-			if (!tabstr[i])
-			{
-				printf("NULL\n");
-			}
-			else{
-				printf("%s\n", tabstr[i]);
-			}
-			printf("-------------\n");
-			
-			i++;
-		}
-	}
-	if (malloc_usable_size(tabstr)== sizeof(char *) * 3)
-		printf("YES");
-	else
-		printf("NO");
-	// printf("%i\n", malloc_usable_size(tabstr));
-	// printf("%i\n", sizeof(char *) * 3);
+    splitme = strdup("Tripouille ");
+	tab = ft_split(splitme, ' ');
+    //tab[2] fonctionne ?
+	if (tab[3] == NULL)
+        printf("YES");
+    // while (str[++i])
+    // {    
+    //     printf("%s", str[0]);
+    // }
+    // i = -1;
+    while (tab[++i])
+        free(tab[i]);
+    free(tab);
 	return 0;
 }
