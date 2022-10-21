@@ -6,7 +6,7 @@
 /*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 10:54:50 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/20 18:12:18 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/10/21 17:16:34 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,18 +43,19 @@ int main()
     char **tab;
     char *splitme;
     int i = -1;
+    
 
-    splitme = strdup("Tripouille ");
-	tab = ft_split(splitme, ' ');
+    // splitme = strdup("Tripouille ");
+	tab = ft_split(" Tripouille", ' ');
     //tab[2] fonctionne ?
-	if (tab[3] == NULL)
-        printf("YES");
+	// if (tab[1] == NULL)
+    //     printf("YES");
     // while (str[++i])
     // {    
     //     printf("%s", str[0]);
     // }
     // i = -1;
-    while (tab[++i])
+    while (tab[++i] != NULL)
         free(tab[i]);
     free(tab);
 	return 0;
