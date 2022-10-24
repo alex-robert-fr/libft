@@ -6,7 +6,7 @@
 /*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 17:26:54 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/24 14:32:03 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/10/24 17:46:45 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int		ft_tolower(int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_atoi(const char *nptr);
+int	ft_lstsize(t_list *lst);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strdup(const char *s);
 char	*ft_strjoin(char const *s1, char const *s2);
