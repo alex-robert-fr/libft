@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/26 10:54:50 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/24 16:34:30 by alrobert         ###   ########.fr       */
+/*   Created: 2022/10/24 11:52:25 by alrobert          #+#    #+#             */
+/*   Updated: 2022/10/24 17:01:00 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
 #include "libft.h"
 
-int main()
+t_list	*ft_lstnew(void *content)
 {
-	t_list *l = ft_lstnew((void *)42);
-	if (l->content == (void *)42)
-		printf("YES");
-	else
-		printf("NO");
-	return (0);
+	t_list	*list;
+	
+	list = malloc(sizeof(t_list));
+	if (!list)
+		return (NULL);
+	list->content = content;
+	list->next = NULL;
+	return (list);
 }
