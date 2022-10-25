@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/26 10:54:50 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/25 17:35:49 by alrobert         ###   ########.fr       */
+/*   Created: 2022/10/25 14:23:12 by alrobert          #+#    #+#             */
+/*   Updated: 2022/10/25 17:51:00 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
 #include "libft.h"
 
-void			lstdelone_f(void *d) {
-	free(d);
-}
-
-int main(void)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	t_list	*l = ft_lstnew(strdup("nyancat"));
-
-	l->next = ft_lstnew(strdup("#TEST#"));
-	ft_lstclear(&l, lstdelone_f);
-	return (0);
+	if (!lst || !del)
+		return ;
+	del(lst->content);
+	free(lst);
 }

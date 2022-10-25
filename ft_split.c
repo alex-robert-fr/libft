@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alrobert <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 22:22:40 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/24 15:56:08 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/10/25 17:41:40 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_set_split(char const *s, char c, char **str_array, int len)
+static char	**ft_set_split(char const *s, char c, char **str_array, int len)
 {
 	int	i;
 	int	letter;
@@ -41,7 +41,7 @@ char	**ft_set_split(char const *s, char c, char **str_array, int len)
 	return (str_array);
 }
 
-int	ft_nb_word(char const *s, char c, int len)
+static int	ft_nb_word(char const *s, char c, int len)
 {
 	int	rows;
 	int	i;

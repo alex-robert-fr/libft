@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 13:32:30 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/19 14:26:40 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/10/25 17:42:07 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	trim(char const *s1, char const *set)
+static int	trim(char const *s1, char const *set)
 {
 	int		i_start;
 	int		find;
@@ -40,7 +40,7 @@ int	trim(char const *s1, char const *set)
 	return (i_start);
 }
 
-int	rtrim(char const *s1, char const *set)
+static int	rtrim(char const *s1, char const *set)
 {
 	int		i_start;
 	int		find;

@@ -6,15 +6,16 @@
 /*   By: alrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 14:58:52 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/25 16:29:02 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/10/25 17:48:11 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list *tmp;
+	t_list	*tmp;
+
 	if (lst && del)
 	{
 		while (*lst != NULL)

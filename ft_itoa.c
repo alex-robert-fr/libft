@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alrobert <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 13:50:57 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/19 16:47:31 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/10/25 17:40:50 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	num_len(int n)
+static int	num_len(int n)
 {
 	int	size;
 
@@ -33,7 +33,7 @@ int	num_len(int n)
 	return (size);
 }
 
-char	*nbr_to_str(int n, int i, int is_negative, char *str)
+static char	*nbr_to_str(int n, int i, int is_negative, char *str)
 {
 	str[i] = '\0';
 	i--;

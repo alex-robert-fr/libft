@@ -6,7 +6,7 @@
 /*   By: alrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 13:42:07 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/25 14:22:00 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/10/25 17:50:44 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list *list;
-	
+	t_list	*list;
+
 	if (!(*lst))
 	{
 		(*lst) = new;

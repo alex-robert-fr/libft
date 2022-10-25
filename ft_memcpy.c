@@ -6,11 +6,11 @@
 /*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 14:49:21 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/16 16:40:53 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/10/25 17:38:39 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
