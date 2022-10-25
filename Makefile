@@ -6,7 +6,7 @@
 #    By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 14:23:23 by alrobert          #+#    #+#              #
-#    Updated: 2022/10/24 16:45:04 by alrobert         ###   ########.fr        #
+#    Updated: 2022/10/25 17:09:25 by alrobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,14 @@ SOURCE = ft_atoi.c \
 	ft_strncmp.c \
 	ft_toupper.c
 BONUS = ft_lstnew.c \
-		ft_lstadd_front.c
+		ft_lstadd_front.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c
 FLAGS = -Wall -Wextra -Werror
 
 
