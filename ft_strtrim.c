@@ -6,7 +6,7 @@
 /*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 13:32:30 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/25 17:42:07 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/10/26 09:31:52 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ static int	trim(char const *s1, char const *set)
 	return (i_start);
 }
 
-static int	rtrim(char const *s1, char const *set)
+static size_t	rtrim(char const *s1, char const *set)
 {
-	int		i_start;
-	int		find;
-	int		j;
+	size_t		i_start;
+	int			find;
+	int			j;
 
 	i_start = ft_strlen(s1) - 1;
 	find = 1;
@@ -70,10 +70,10 @@ static int	rtrim(char const *s1, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*str;
-	int		i;
-	int		i_start;
-	int		i_end;
+	size_t		i;
+	size_t		i_start;
+	char		*str;
+	int			i_end;
 
 	if (!s1)
 		return (NULL);

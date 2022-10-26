@@ -6,16 +6,18 @@
 /*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 13:23:26 by alrobert          #+#    #+#             */
-/*   Updated: 2022/09/30 11:15:24 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/10/26 09:23:04 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *c)
-{
-	int	i;
+#include "libft.h"
 
-	i = -1;
-	while (c[++i])
-		;
+size_t	ft_strlen(const char *c)
+{
+	size_t	i;
+
+	i = 0;
+	while (c[i])
+		i++;
 	return (i);
 }

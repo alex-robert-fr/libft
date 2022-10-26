@@ -6,7 +6,7 @@
 /*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 22:22:40 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/25 17:41:40 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/10/26 09:32:34 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ static char	**ft_set_split(char const *s, char c, char **str_array, int len)
 	return (str_array);
 }
 
-static int	ft_nb_word(char const *s, char c, int len)
+static int	ft_nb_word(char const *s, char c, size_t len)
 {
-	int	rows;
-	int	i;
+	size_t	i;
+	int		rows;
 
 	rows = 1;
 	i = 0;
@@ -60,9 +60,9 @@ static int	ft_nb_word(char const *s, char c, int len)
 
 char	**ft_split(char const *s, char c)
 {
-	char	**str_array;
-	int		i;
-	int		len;
+	size_t		i;
+	size_t		len;
+	char		**str_array;
 
 	i = 0;
 	if (s)

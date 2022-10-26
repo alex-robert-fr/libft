@@ -6,14 +6,16 @@
 /*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 10:02:11 by alrobert          #+#    #+#             */
-/*   Updated: 2022/09/27 14:45:12 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/10/26 09:39:07 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, unsigned int n)
+#include "libft.h"
+
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned int	i;
-	char			*str;
+	size_t	i;
+	char	*str;
 
 	str = s;
 	i = 0;

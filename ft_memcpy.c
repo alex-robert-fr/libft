@@ -6,7 +6,7 @@
 /*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 14:49:21 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/25 17:38:39 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/10/26 09:41:00 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t			i;
+	size_t	i;
 
 	if (!dest && !src)
 		return (NULL);

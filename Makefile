@@ -6,12 +6,13 @@
 #    By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 14:23:23 by alrobert          #+#    #+#              #
-#    Updated: 2022/10/25 17:09:25 by alrobert         ###   ########.fr        #
+#    Updated: 2022/10/26 11:31:35 by alrobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft
-SOURCE = ft_atoi.c \
+NAME = libft.a
+CC = gcc
+SRC = ft_atoi.c \
 	ft_isdigit.c \
 	ft_memcpy.c \
 	ft_putstr_fd.c \
@@ -54,35 +55,22 @@ BONUS = ft_lstnew.c \
 		ft_lstclear.c \
 		ft_lstiter.c \
 		ft_lstmap.c
-FLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
+OBJ = $(SRC:.c=.o)
+OBJ_BONUS = $(BONUS:.c=.o)
 
-
-all: $(NAME)
 
 $(NAME):
-	gcc $(SOURCE) libft.h -c $(FLAGS)
-	ar rc libft.a ft_*.o
+	$(CC) -c $(SRC) $(CFLAGS)
+	ar rcs $(NAME) $(OBJ)
 clean:
-	@rm -f *.o
+	@rm -f $(OBJ) $(OBJ_BONUS)
 fclean: clean
-	@rm -f $(NAME) $(NAME).so a.out
+	@rm -f $(NAME)
 re: fclean all
-
-run:
-	@gcc main.c $(SOURCE) -o $(NAME) -lbsd
-	@./$(NAME)
-b_run:
-	@gcc main.c $(SOURCE) $(BONUS) -o $(NAME) -lbsd
-	@./$(NAME)
-check:
-	@gcc main.c $(SOURCE) $(BONUS) libft.h -o $(NAME) $(FLAGS)
-#	@valgrind ./$(NAME)
-debug:
-	@gcc main.c $(SOURCE) $(BONUS) -o $(NAME) -g
-	@gdb ./$(NAME)
 bonus:
-	gcc $(SOURCE) $(BONUS) libft.h -c $(FLAGS)
-	ar rc libft.a ft_*.o
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SOURCE)
-	gcc -nostartfiles -shared -o libft.so ft_*.o
+	$(CC) -c $(SRC) $(BONUS) $(CFLAGS)
+	ar rcs $(NAME) $(OBJ) $(OBJ_BONUS)
+all: $(NAME)
+.PHONY:
+	all clear fclean re bonus
