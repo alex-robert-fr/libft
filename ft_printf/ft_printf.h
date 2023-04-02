@@ -15,9 +15,9 @@
 # define MAX_TYPE 9
 # define MAX_CONVERT 9
 
-# include "../libft.h"
-# include "ft_printf_proto_struct.h"
 # include <stdarg.h>
+# include <stdlib.h>
+# include "ft_printf_proto_struct.h"
 
 int				ft_printf(const char *str, ...);
 int				check_flag(const char *flag, t_info_cur_arg *info);

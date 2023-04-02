@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "../libft.h"
 
 static int	call_convert(t_info_cur_arg *arg, int i, const char *s, va_list lst)
 {

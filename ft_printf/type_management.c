@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "../libft.h"
 
 t_arg_type	check_type(const char *str)
 {

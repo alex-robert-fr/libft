@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "../libft.h"
 
 static void	check_int(const char *str, va_list args, t_info_cur_arg *info_arg)
 {

@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "../libft.h"
 
 void	c_convert(void *arg, t_info_cur_arg *info)
 {

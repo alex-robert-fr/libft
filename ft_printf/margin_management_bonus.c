@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "../libft.h"
 
 int	get_margin(const char *str, t_info_cur_arg *info)
 {

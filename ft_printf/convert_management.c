@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "../libft.h"
 
 void	check_convert_c(const char letter, void *arg, t_info_cur_arg *info)
 {

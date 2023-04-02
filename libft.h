@@ -35,6 +35,7 @@ int		ft_atoi(const char *nptr);
 int		ft_lstsize(t_list *lst);
 int		*ft_int_to_binary(int dec, int bit_number);
 int		ft_binary_to_int(char *binary, int bits_number);
+int		ft_printf(const char *s, ...);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strdup(const char *s);
 char	*ft_strjoin(char const *s1, char const *s2);

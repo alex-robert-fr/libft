@@ -69,7 +69,7 @@ PRINTF		=	ft_printf/check_management.c		\
 				ft_printf/num_convert_manager.c		\
 				ft_printf/str_convert_manager.c		\
 				ft_printf/type_management.c
-CFLAGS		=	-Wall -Wextra -Werror
+CFLAGS		=	-Ift_printf -Wall -Wextra -Werror
 OBJ			=	$(SRC:.c=.o)
 OBJ_BONUS	=	$(BONUS:.c=.o)
 OBJ_PRINTF	=	$(PRINTF:.c=.o)
