@@ -62,7 +62,9 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+size_t	ft_nblen(long nb);
 size_t	ft_strlen(const char *c);
+size_t	ft_memlen(unsigned long nbr);
 size_t	ft_strlcat(char *dest, const char *src, size_t n);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 
