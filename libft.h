@@ -33,6 +33,8 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_atoi(const char *nptr);
 int		ft_lstsize(t_list *lst);
+int		*ft_int_to_binary(int dec, int bit_number);
+int		ft_binary_to_int(char *binary, int bits_number);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strdup(const char *s);
 char	*ft_strjoin(char const *s1, char const *s2);
