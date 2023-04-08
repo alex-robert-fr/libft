@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "ft_printf.h"
-#include "../libft.h"
 
 void	ft_puthexa(unsigned long nbr, int is_maj_or_min)
 {

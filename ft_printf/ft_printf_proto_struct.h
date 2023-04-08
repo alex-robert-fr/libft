@@ -6,7 +6,7 @@
 /*   By: alrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 14:14:55 by alrobert          #+#    #+#             */
-/*   Updated: 2022/11/16 15:51:31 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/11/17 09:15:54 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef enum a_type
 typedef struct s_info_current_arg
 {
 	long			_int;
+	unsigned long	_u_int;
 	char			*_char;
 	int				len;
 	int				justify_left;
@@ -48,7 +49,7 @@ typedef struct s_type
 typedef struct s_convert
 {
 	const char	convert;
-	void		(*cb)(void *, t_info_cur_arg *);
+	void		(*cb)(t_info_cur_arg *);
 }	t_convert;
 
 #endif

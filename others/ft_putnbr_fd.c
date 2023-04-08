@@ -1,23 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/26 13:23:26 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/26 09:23:04 by alrobert         ###   ########.fr       */
+/*   Created: 2022/10/12 17:48:58 by alrobert          #+#    #+#             */
+/*   Updated: 2022/11/11 16:19:30 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *c)
+void	ft_putnbr_fd(long long n, int fd)
 {
-	size_t	i;
+	char	c_nb;
 
-	i = 0;
-	while (c[i])
-		i++;
-	return (i);
+	if (n == -9223372036854775807)
+	{
+		write(fd, "-9223372036854775807", 20);
+		return ;
+	}
+	else
+	{
+		if (n < 0)
+		{
+			n *= -1;
+			write(fd, "-", 1);
+		}
+		if (n > 9)
+		{
+			ft_putnbr_fd(n / 10, fd);
+		}
+		c_nb = n % 10 + '0';
+		write(fd, &c_nb, 1);
+	}
 }

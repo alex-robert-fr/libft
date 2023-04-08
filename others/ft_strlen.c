@@ -1,39 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   margin_management.c                                :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 10:16:52 by alrobert          #+#    #+#             */
-/*   Updated: 2022/11/16 15:15:00 by alrobert         ###   ########.fr       */
+/*   Created: 2022/09/26 13:23:26 by alrobert          #+#    #+#             */
+/*   Updated: 2022/11/10 15:15:18 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "../libft.h"
+#include "libft.h"
 
-int	get_margin(const char *str, t_info_cur_arg *info)
+size_t	ft_strlen(const char *c)
 {
-	int		len;
-	char	*m_str;
+	size_t	i;
 
-	len = 0;
-	while (ft_isdigit(str[len]))
-		len++;
-	if (!len)
+	if (!c)
 		return (0);
-	m_str = ft_substr(str, 0, len);
-	info->margin = atoi(m_str);
-	free(m_str);
-	return (len);
-}
-
-void	ft_putmargin(t_info_cur_arg *info)
-{
-	int	i;
-
-	i = -1;
-	while (++i < (info->margin - info->len))
-		ft_putchar_fd(info->c_margin, 1);
+	i = 0;
+	while (c[i])
+		i++;
+	return (i);
 }

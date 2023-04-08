@@ -6,7 +6,7 @@
 /*   By: alrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 13:57:03 by alrobert          #+#    #+#             */
-/*   Updated: 2022/11/16 15:45:00 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/11/17 09:23:18 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ t_info_cur_arg	create_info_arg_struct(void)
 	t_info_cur_arg	info_arg;
 
 	info_arg._int = 0x0;
+	info_arg._u_int = 0x0;
 	info_arg._char = 0x0;
 	info_arg.len = 0;
 	info_arg.justify_left = 0;
@@ -37,7 +38,7 @@ const t_convert	*create_convert_struct(void)
 	{'u', d_convert},
 	{'x', x_convert},
 	{'X', xx_convert},
-	{'%', prc_convert},
+	{'%', c_convert},
 	};
 
 	return (c);

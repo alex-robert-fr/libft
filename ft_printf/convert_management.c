@@ -6,14 +6,14 @@
 /*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 09:25:32 by alrobert          #+#    #+#             */
-/*   Updated: 2022/11/16 15:04:36 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/11/17 09:28:16 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "ft_printf.h"
-#include "../libft.h"
 
-void	check_convert_c(const char letter, void *arg, t_info_cur_arg *info)
+void	check_convert_c(const char letter, t_info_cur_arg *info)
 {
 	const t_convert	*c;
 	int				i;
@@ -31,7 +31,7 @@ void	check_convert_c(const char letter, void *arg, t_info_cur_arg *info)
 			}
 			if (!info->justify_left && info->margin)
 				ft_putmargin(info);
-			c[i].cb(arg, info);
+			c[i].cb(info);
 			if (info->justify_left && info->margin)
 				ft_putmargin(info);
 			return ;

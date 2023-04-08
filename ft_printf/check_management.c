@@ -6,12 +6,12 @@
 /*   By: alrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 10:03:47 by alrobert          #+#    #+#             */
-/*   Updated: 2022/11/16 15:41:44 by alrobert         ###   ########.fr       */
+/*   Updated: 2022/11/17 09:50:06 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "ft_printf.h"
-#include "../libft.h"
 
 static void	check_int(const char *str, va_list args, t_info_cur_arg *info_arg)
 {
@@ -39,13 +39,13 @@ static void	check_int(const char *str, va_list args, t_info_cur_arg *info_arg)
 	}
 }
 
-static void	check_other(const char *str, va_list args, t_info_cur_arg *info_arg)
+static void	check_char(const char *str, va_list args, t_info_cur_arg *info_arg)
 {
 	va_list			list_tmp;
-	unsigned long	ptr;
 
 	if (*str == '%')
 	{
+		info_arg->_int = '%';
 		info_arg->len = 1;
 		return ;
 	}
@@ -60,7 +60,14 @@ static void	check_other(const char *str, va_list args, t_info_cur_arg *info_arg)
 		if (!info_arg->len && info_arg->_char)
 			return ;
 	}
-	else if (info_arg->type == PTR)
+}
+
+static void	check_ptr(va_list args, t_info_cur_arg *info_arg)
+{
+	va_list			list_tmp;
+	unsigned long	ptr;
+
+	if (info_arg->type == PTR)
 	{
 		va_copy(list_tmp, args);
 		ptr = va_arg(list_tmp, unsigned long);
@@ -69,6 +76,7 @@ static void	check_other(const char *str, va_list args, t_info_cur_arg *info_arg)
 		else
 			info_arg->len = ft_memlen(ptr);
 		va_end(list_tmp);
+		info_arg->_u_int = va_arg(args, unsigned long);
 	}
 }
 
@@ -78,5 +86,6 @@ void	check_args(const char *str, va_list args, t_info_cur_arg *info_arg)
 	if (*str == 'c' || *str == 's' || *str == 'p' || *str == '%')
 		info_arg->c_margin = ' ';
 	check_int(str, args, info_arg);
-	check_other(str, args, info_arg);
+	check_char(str, args, info_arg);
+	check_ptr(args, info_arg);
 }
