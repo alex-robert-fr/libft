@@ -10,7 +10,9 @@ SRC			=	./ft_printf/ft_printf.c				\
 				./ft_printf/str_convert_manager.c	\
 				./ft_printf/num_convert_manager.c	\
 				./ft_printf/create_struct.c			\
-				./ft_printf/ft_puthexa.c
+				./ft_printf/ft_puthexa.c			\
+				./get_next_line/get_next_line.c		\
+				./get_next_line/get_next_line_utils.c
 NO_BONUS	=	./ft_printf/flag_management.c		\
 				./ft_printf/margin_management.c
 BONUS		=	./ft_printf/flag_management_bonus.c	\
