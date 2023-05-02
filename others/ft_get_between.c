@@ -56,18 +56,25 @@ char	**alloc_get_between(char c, char *str)
 // ["echo", "salut"]
 char	**ft_get_between(char c, char *str)
 {
+	/*
 	int	i;
 	int	i_word;
 	int	nb_array;
 	int	find_char;
+	int	find_bad_char;
+	*/
 	char	**array;
 
+	/*
 	i = 0;
 	i_word = 0;
 	nb_array = 0;
 	find_char = 0;
+	find_bad_char = 0;
+	*/
 	array = alloc_get_between(c, str);
 	ft_putstr_fd("GET_BETWEEN\n", 1);
+	/*
 	while (str[i])
 	{
 		if (str[i] == c)
@@ -77,13 +84,13 @@ char	**ft_get_between(char c, char *str)
 			i_word = 0;
 			find_char = !find_char;
 		}
-		if (find_char && str[i] != c)
+		if (find_char && str[i] != c && !find_bad_char)
 		{
-			printf("%i => %i: %c\n", nb_array, i_word, str[i]);
 			array[nb_array][i_word] = str[i];
 			i_word++;
 		}
 		i++;
 	}
+	*/
 	return (array);
 }
