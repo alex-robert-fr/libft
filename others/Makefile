@@ -50,7 +50,8 @@ SRC			=	ft_atoi.c \
 				ft_toupper.c \
 				ft_int_to_binary.c \
 				ft_binary_to_int.c	\
-				ft_get_between.c
+				ft_get_between.c	\
+				ft_findchr.c
 BONUS		=	ft_lstnew.c \
 				ft_lstadd_front.c \
 				ft_lstsize.c \
