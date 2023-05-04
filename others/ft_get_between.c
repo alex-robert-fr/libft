@@ -24,6 +24,7 @@ int		count_str_for_alloc(char *c, char *str)
 			else if (is_find && str[i] == find_c)
 			{
 				is_find = 0;
+				result++;
 				printf("END FIND: %c\n", find_c);
 			}
 		}
@@ -31,7 +32,8 @@ int		count_str_for_alloc(char *c, char *str)
 			printf("=> %c\n", str[i]);
 		i++;
 	}
-	return (result/2);
+	printf("RESULT: %i\n", result);
+	return (result);
 }
 
 char	**alloc_get_between(char *c, char *str)
