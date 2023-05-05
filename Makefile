@@ -1,6 +1,6 @@
 NAME		=	libft.a
 CC			=	clang
-CFLAGS		=	-Wall -Wextra -Werror -Iincludes
+CFLAGS		=	-Wall -Wextra -Werror -Iincludes -g
 LIBFT_PATH	=	./others/
 LIBFT_NAME	=	others.a
 SRC			=	./ft_printf/ft_printf.c				\

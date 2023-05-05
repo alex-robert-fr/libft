@@ -61,7 +61,7 @@ BONUS		=	ft_lstnew.c \
 				ft_lstclear.c \
 				ft_lstiter.c \
 				ft_lstmap.c
-CFLAGS		=	-Wall -Wextra -Werror -I../includes
+CFLAGS		=	-Wall -Wextra -Werror -I../includes -g
 OBJ			=	$(SRC:.c=.o)
 OBJ_BONUS	=	$(BONUS:.c=.o)
 

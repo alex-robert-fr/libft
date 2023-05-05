@@ -19,17 +19,15 @@ int		count_str_for_alloc(char *c, char *str)
 			{
 				is_find = 1;
 				find_c = str[i];
-				printf("START FIND: %c\n", find_c);
 			}
 			else if (is_find && str[i] == find_c)
 			{
 				is_find = 0;
 				result++;
-				printf("END FIND: %c\n", find_c);
 			}
 		}
-		if (str[i] != find_c && is_find)
-			printf("=> %c\n", str[i]);
+//		if (str[i] != find_c && is_find)
+//			printf("=> %c\n", str[i]);
 		i++;
 	}
 	printf("RESULT: %i\n", result);
@@ -39,18 +37,41 @@ int		count_str_for_alloc(char *c, char *str)
 char	**alloc_get_between(char *c, char *str)
 {
 	char	**array;
-	int	i;
-	int	i_word;
-	int	nb_array;
-	int	find_char;
+	int		i;
+	int		i_word;
+	int		i_array;
+	int		find_char;
+	char	find_c;
 
 	i = 0;
 	i_word = 0;
-	nb_array = 0;
+	i_array = 0;
 	find_char = 0;
 	array = ft_calloc(count_str_for_alloc(c, str) + 1, sizeof(char*));
 	while (str[i])
 	{
+		if (ft_findchr(str[i], c) != -1)
+		{
+			if (!find_char)
+			{
+				find_char = 1;
+				find_c = str[i];
+				printf("START FIND: %c\n", find_c);
+			}
+			else if (find_char && str[i] == find_c)
+			{
+				array[i_array] = ft_calloc(i_word + 1, 1);
+				i_word = 0;
+				find_char = 0;
+				i_array++;
+				printf("END FIND: %c\n", find_c);
+			}
+		}
+		if (str[i] != find_c && find_char)
+		{
+			printf("ARRAY NUMBER %i : %i => %c\n", i_array, i_word, str[i]);
+			i_word++;
+		}
 		i++;
 	}
 	return (array);
