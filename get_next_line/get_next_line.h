@@ -3,19 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 13:19:56 by alex              #+#    #+#             */
-/*   Updated: 2023/01/26 14:24:24 by alex             ###   ########.fr       */
+/*   Updated: 2023/05/22 11:53:21 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUFFER_SIZE
-#define BUFFER_SIZE 42
-#endif
+#ifndef GET_NEXT_LINE_H
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+# include <fcntl.h>
+# include <stdlib.h>
+# include <unistd.h>
 
-#include <fcntl.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
+size_t	ft_strlen(const char *c);
+void	*ft_calloc(size_t nmemb, size_t size);
 char	*get_next_line(int fd);
+char	*ft_strchr(char *s, int c);
+char	*ft_free(char *buf, char *tmp_buf);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*check_read(int end_line, int fd, char *buf, char *tmp_buf);
+#endif
