@@ -20,8 +20,8 @@
 
 size_t	ft_strlen(const char *c);
 void	*ft_calloc(size_t nmemb, size_t size);
+char	*gnl_strchr(char *s, int c);
 char	*get_next_line(int fd);
-char	*ft_strchr(char *s, int c);
 char	*ft_free(char *buf, char *tmp_buf);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*check_read(int end_line, int fd, char *buf, char *tmp_buf);

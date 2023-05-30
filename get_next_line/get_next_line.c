@@ -20,7 +20,7 @@ char	*prepare_buf(char *buf)
 	if (!buf)
 		return (NULL);
 	free_buf = buf;
-	buf = ft_strchr(buf, '\n');
+	buf = gnl_strchr(buf, '\n');
 	tmp_buf = ft_strjoin(buf, "");
 	free(free_buf);
 	return (tmp_buf);

@@ -1,0 +1,194 @@
+[
+ {
+  "directory": "/home/alex/Documents/42/so_long/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Iincludes",
+   "-g",
+   "-c",
+   "-o",
+   "ft_printf/ft_printf.o",
+   "ft_printf/ft_printf.c"
+  ],
+  "file": "ft_printf/ft_printf.c"
+ },
+ {
+  "directory": "/home/alex/Documents/42/so_long/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Iincludes",
+   "-g",
+   "-c",
+   "-o",
+   "ft_printf/type_management.o",
+   "ft_printf/type_management.c"
+  ],
+  "file": "ft_printf/type_management.c"
+ },
+ {
+  "directory": "/home/alex/Documents/42/so_long/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Iincludes",
+   "-g",
+   "-c",
+   "-o",
+   "ft_printf/convert_management.o",
+   "ft_printf/convert_management.c"
+  ],
+  "file": "ft_printf/convert_management.c"
+ },
+ {
+  "directory": "/home/alex/Documents/42/so_long/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Iincludes",
+   "-g",
+   "-c",
+   "-o",
+   "ft_printf/check_management.o",
+   "ft_printf/check_management.c"
+  ],
+  "file": "ft_printf/check_management.c"
+ },
+ {
+  "directory": "/home/alex/Documents/42/so_long/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Iincludes",
+   "-g",
+   "-c",
+   "-o",
+   "ft_printf/str_convert_manager.o",
+   "ft_printf/str_convert_manager.c"
+  ],
+  "file": "ft_printf/str_convert_manager.c"
+ },
+ {
+  "directory": "/home/alex/Documents/42/so_long/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Iincludes",
+   "-g",
+   "-c",
+   "-o",
+   "ft_printf/num_convert_manager.o",
+   "ft_printf/num_convert_manager.c"
+  ],
+  "file": "ft_printf/num_convert_manager.c"
+ },
+ {
+  "directory": "/home/alex/Documents/42/so_long/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Iincludes",
+   "-g",
+   "-c",
+   "-o",
+   "ft_printf/create_struct.o",
+   "ft_printf/create_struct.c"
+  ],
+  "file": "ft_printf/create_struct.c"
+ },
+ {
+  "directory": "/home/alex/Documents/42/so_long/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Iincludes",
+   "-g",
+   "-c",
+   "-o",
+   "ft_printf/ft_puthexa.o",
+   "ft_printf/ft_puthexa.c"
+  ],
+  "file": "ft_printf/ft_puthexa.c"
+ },
+ {
+  "directory": "/home/alex/Documents/42/so_long/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Iincludes",
+   "-g",
+   "-c",
+   "-o",
+   "get_next_line/get_next_line.o",
+   "get_next_line/get_next_line.c"
+  ],
+  "file": "get_next_line/get_next_line.c"
+ },
+ {
+  "directory": "/home/alex/Documents/42/so_long/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Iincludes",
+   "-g",
+   "-c",
+   "-o",
+   "get_next_line/get_next_line_utils.o",
+   "get_next_line/get_next_line_utils.c"
+  ],
+  "file": "get_next_line/get_next_line_utils.c"
+ },
+ {
+  "directory": "/home/alex/Documents/42/so_long/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Iincludes",
+   "-g",
+   "-c",
+   "-o",
+   "ft_printf/flag_management.o",
+   "ft_printf/flag_management.c"
+  ],
+  "file": "ft_printf/flag_management.c"
+ },
+ {
+  "directory": "/home/alex/Documents/42/so_long/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-Iincludes",
+   "-g",
+   "-c",
+   "-o",
+   "ft_printf/margin_management.o",
+   "ft_printf/margin_management.c"
+  ],
+  "file": "ft_printf/margin_management.c"
+ }
+]

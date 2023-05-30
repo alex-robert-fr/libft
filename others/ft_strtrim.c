@@ -48,7 +48,7 @@ static size_t	rtrim(char const *s1, char const *set)
 
 	i_start = ft_strlen(s1) - 1;
 	find = 1;
-	while (s1[i_start])
+	while (i_start > 0 && s1[i_start])
 	{
 		if (find >= 1)
 		{
