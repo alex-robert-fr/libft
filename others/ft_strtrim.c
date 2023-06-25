@@ -6,92 +6,47 @@
 /*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 13:32:30 by alrobert          #+#    #+#             */
-/*   Updated: 2022/10/26 09:31:52 by alrobert         ###   ########.fr       */
+/*   Updated: 2023/06/25 14:46:13 by alrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	trim(char const *s1, char const *set)
+static int
+	ft_char_in_set(char c, char const *set)
 {
-	int		i_start;
-	int		find;
-	int		j;
+	size_t	i;
 
-	i_start = 0;
-	find = 1;
-	while (s1[i_start])
-	{
-		if (find >= 1)
-		{
-			find = 0;
-			j = 0;
-			while (set[j])
-			{
-				if (s1[i_start] == set[j])
-					find++;
-				j++;
-			}
-		}
-		else
-			break ;
-		i_start++;
-	}
-	return (i_start);
-}
-
-static size_t	rtrim(char const *s1, char const *set)
-{
-	size_t		i_start;
-	int			find;
-	int			j;
-
-	i_start = ft_strlen(s1) - 1;
-	find = 1;
-	while (i_start > 0 && s1[i_start])
-	{
-		if (find >= 1)
-		{
-			find = 0;
-			j = 0;
-			while (set[j])
-			{
-				if (s1[i_start] == set[j])
-					find++;
-				j++;
-			}
-		}
-		else
-			break ;
-		i_start--;
-	}
-	return (i_start);
-}
-
-char	*ft_strtrim(char const *s1, char const *set)
-{
-	size_t		i;
-	size_t		i_start;
-	char		*str;
-	int			i_end;
-
-	if (!s1)
-		return (NULL);
 	i = 0;
-	i_start = trim(s1, set) - 1;
-	i_end = rtrim(s1, set) + 2;
-	if ((i_start + 1) == ft_strlen(s1))
+	while (set[i])
 	{
-		str = ft_calloc(1, sizeof(char));
-		return (str);
-	}
-	str = ft_calloc(i_end - i_start + 1, sizeof(char));
-	if (!str)
-		return (NULL);
-	while (s1[i] && i < (i_end - i_start))
-	{
-		str[i] = s1[i_start + i];
+		if (set[i] == c)
+			return (1);
 		i++;
 	}
+	return (0);
+}
+
+char
+	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*str;
+	size_t	i;
+	size_t	start;
+	size_t	end;
+
+	start = 0;
+	while (s1[start] && ft_char_in_set(s1[start], set))
+		start++;
+	end = ft_strlen(s1);
+	while (end > start && ft_char_in_set(s1[end - 1], set))
+		end--;
+	str = (char*)malloc(sizeof(*s1) * (end - start + 1));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (start < end)
+		str[i++] = s1[start++];
+	str[i] = 0;
 	return (str);
 }
