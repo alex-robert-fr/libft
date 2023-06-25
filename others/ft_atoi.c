@@ -6,15 +6,15 @@
 /*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 17:33:23 by alex              #+#    #+#             */
-/*   Updated: 2022/10/25 17:37:14 by alrobert         ###   ########.fr       */
+/*   Updated: 2023/06/22 15:40:43 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *nptr)
+long	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	result;
-	int	is_negative;
+	int		i;
+	long	result;
+	int		is_negative;
 
 	i = 0;
 	result = 0;
@@ -34,5 +34,7 @@ int	ft_atoi(const char *nptr)
 		result = (result * 10) + ((int)nptr[i++] - 48);
 	if (is_negative)
 		result *= -1;
+	if (result > 0x7FFFFFFF || result < -2147483648)
+		return (0);
 	return (result);
 }

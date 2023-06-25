@@ -6,7 +6,7 @@
 /*   By: alrobert <alrobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 17:26:54 by alrobert          #+#    #+#             */
-/*   Updated: 2023/06/02 12:03:01 by alex             ###   ########.fr       */
+/*   Updated: 2023/06/03 14:47:40 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int		ft_lstsize(t_list *lst);
 int		ft_atoi(const char *nptr);
 int		ft_putchar_fd(char c, int fd);
 int		ft_findchr(char c, char *array);
+int		ft_find_char(char c, char *chars);
 int		ft_putstr_fd(const char *s, int fd);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
